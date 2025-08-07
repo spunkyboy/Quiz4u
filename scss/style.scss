@@ -1,0 +1,240 @@
+
+html, body{
+  font-size: 16px;
+  // height: auto;
+  // overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.all-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c2833;
+  min-height: calc(var(--vh, 1vh) * 100); // 👈 Replaces height: 100vh
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  border: 0.1rem solid #e0ffff;
+  border-radius: 1rem;
+  
+  .sign-in{
+    display: grid;
+    gap: 1rem;
+  }
+  h1{
+    font-family: "Noto Sans", serif;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color:#e0ffff;
+    margin-bottom: 2rem;
+  }
+
+  h2{
+    font-family: "Noto Sans", serif;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:#e0ffff;
+  }
+
+  p{
+    font-family: "Noto Sans", serif;
+    text-align: center;
+    padding: 1rem 0rem;
+    color:#e0ffff;
+    
+    a{
+      font-family: "Noto Sans", serif;
+      color: #e6cc22;
+    }
+  }
+  .greet{
+    font-family: "Noto Sans", serif;
+    text-align: center;
+    margin: 2rem 0rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+.quiz-progress {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color:#00ff00;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  background-color: #e6cc22;
+  color: #1c2833;
+  border: none;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #000;
+    color:#279fe2;
+  }
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.quiz-class{
+  display: grid;
+  justify-content: center;
+  font-family: "Noto Sans", serif;
+  font-size: 1.1rem;
+  color:#e0ffff;
+
+  p:nth-child(1){
+    line-height: 1.3;
+  }
+
+  input[type="radio"] {
+    width: 1.2rem; 
+    height: 1.2rem; 
+    cursor: pointer;
+}   
+}
+
+.sign-up-form,
+.sign-in{
+   display: grid;
+   gap: 1rem;
+
+  label {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 0.8rem;
+    font-family: "Noto Sans", serif;
+    color:#e0ffff;
+
+    input[type="checkbox"] {
+      width: 1.2rem; 
+      height: 1.2rem; 
+      cursor: pointer;
+  }   
+
+      input[type="checkbox"]:checked {
+        background-color: #279fe2; /* Green when checked */
+        border-color: #279fe2;
+    }
+  
+}
+} 
+
+//admin style for mobile 
+.admin-content{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c2833;
+  font-family: "Noto Sans", serif;
+  padding: 2rem 0rem;
+  color:#e0ffff;
+  min-height: calc(var(--vh, 1vh) * 100); // 👈 Replaces height: 100vh
+
+  h1{
+   align-self: flex-end;
+   text-align: center;
+   margin: 0 auto;           /* horizontal centering */
+   font-weight: 800;
+   font-size: 1.7rem;
+  }
+  label{
+      display: block;         /* Or inline-block */
+      font-size: 1rem;
+      text-align: center;     /* Center the label text */
+      margin: 1rem ;
+  }
+
+  #quizForm {
+    button {
+      padding: 0.6rem 0rem;
+      background-color: #e6cc22;
+      color: #1c2833;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+
+      display: block;       /* Make button take full width of its content */
+      margin: 0 auto;       /* Auto left and right margins center it */
+      width: 15rem;
+  }
+  }
+  #quizForm input[type="text"] {
+    width: 100%;
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    margin: 1rem 0rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  html, body {
+    background-color: #1c2833;
+    min-height: calc(var(--vh, 1vh) * 100); // 👈 Replaces height: 100vh
+    
+  }
+  .admin-content{
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 2rem;
+    align-items: center;
+    background-color: #1c2833;
+    font-family: "Noto Sans", serif;
+    color:#e0ffff;
+    min-height: calc(var(--vh, 1vh) * 100); // 👈 Replaces height: 100vh
+  
+  }
+  #quizForm {
+    button {
+      padding: 0.6rem 0rem;
+      background-color: #e6cc22;
+      color: #1c2833;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+
+      display: block;       /* Make button take full width of its content */
+      margin: 0 auto;       /* Auto left and right margins center it */
+      width: 10rem; 
+  }
+  }
+}
+
+
