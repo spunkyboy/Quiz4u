@@ -124,7 +124,7 @@
     }
 
     const endpoint = isSignIn 
-   ? 'https://quiz4u.onrender.com/api/auth/admin/signin' 
+  ? 'https://quiz4u.onrender.com/api/auth/admin/signin' 
   : 'https://quiz4u.onrender.com/api/auth/admin/signup';
 
     try {
@@ -147,7 +147,7 @@
           localStorage.setItem('username', username);
           // Redirect to admin dashboard or quiz management page after signin
           setTimeout(() => {
-            window.location.href = '/admin.html'; 
+            window.location.href = './admin.html'; 
           }, 1000);
         } else {
           authForm.reset();
