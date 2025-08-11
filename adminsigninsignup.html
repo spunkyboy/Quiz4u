@@ -55,6 +55,18 @@
       margin-top: 1rem;
       font-weight: bold;
     }
+
+   body {
+  transition: opacity 1s ease, background-color 1s ease;
+  opacity: 1;
+  /* background-color: #1d2a36; */
+}
+
+body.fade-out {
+  opacity: 0;
+  background-color:#2a4156;
+}
+
   </style>
 </head>
 <body>
@@ -147,8 +159,12 @@
           localStorage.setItem('username', username);
           // Redirect to admin dashboard or quiz management page after signin
           setTimeout(() => {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
             window.location.href = '/Quiz4u/admin.html'; 
-          }, 1000);
+          }, 1000); //wait for animations to finish (1s)
+          }, 1000); //initial delay before animatiom starts
+         
         } else {
           authForm.reset();
         }
